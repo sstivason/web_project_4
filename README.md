@@ -1,16 +1,24 @@
-# Project 4: Around The U.S.
+# Name 
+Around The U.S.
 
-### Overview
+## Description
+A responsive, travel-themed web design that enables the user to manage their profile information and post new photos to their gallery.
 
-* Figma
-* Images
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
 
-**Figma**
+## Figma
+The design of this project was made according to the Figma layout:
+[Download Layout](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
 
-* [Link to the project in Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+## Technologies
+This project was created using:
+ * HTML5
+ * CSS3 (Flexbox, Grid, BEM)
+ * JS
 
-**Images**
+ ## Project Status
+ Responsive design completed to closely match the mock-up for desktop and extra-small mobile devices, with a slight enhancemnt to better support mid-sized mobile devices.  The next porject phases will enhance functionality to enable profile modifications to be saved to the server.
 
-The way you'll do this at work is by exporting images directly from Figma — we recommend doing that to practice more. Don't forget to optimize them [here](https://tinypng.com/), so your project loads faster. 
-
-Have fun with JavaScript!
+ ## Demo Site
+ [Github Publication](https://sstivason.github.io/web_project_4/)

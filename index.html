@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Around The U.S. - Jacques Cousteau</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="root">
+  <div class="page">
+    <header class="header">
+      <img src="./images/logo.svg" class="header__logo">
+    </header>
+    <main class="content">
+      <section class="profile">
+        <div class="profile__container">
+          <img class="profile__avatar" src="./images/profileImg.svg" alt="Avatar">
+          <div class="profile__info">
+            <h1 class="profile__name">Jacques Cousteau</h1>  
+            <p class="profile__about-me">Explorer</p>
+            <button class="profile__edit-button" alt="Edit Profile"></button>
+          </div>
+        </div>
+        <button class="profile__post-button" alt="Add to Gallery"></button>
+      </section>
+      <section class="gallery">
+        <ul class="gallery__grid">
+          <li class="card">
+            <img class="card__image" src="./images/Yosemite.png" alt="Yosemite Valley">
+            <div class="card__details">
+              <h3 class="card__title">Yosemite Valley</h3>
+              <button class="card__like-button" alt="Like"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/Louise.png" alt="Lake Louise">
+            <div class="card__details">
+              <h3 class="card__title">Lake Louise</h3>
+              <button class="card__like-button" alt="Like"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/BaldMountains.png" alt="Bald Mountains">
+            <div class="card__details">
+              <h3 class="card__title">Bald Mountains</h3>
+              <button class="card__like-button" alt="Like"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/Latemar.png" alt="Latemar">
+            <div class="card__details">
+              <h3 class="card__title">Latemar</h3>
+              <button class="card__like-button" alt="Like"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/Vanoise.png" alt="Vanoise National Park">
+            <div class="card__details">
+              <h3 class="card__title">Vanoise National Park</h3>
+              <button class="card__like-button" alt="Like"></button>
+            </div>
+          </li>
+          <li class="card">
+            <img class="card__image" src="./images/Lago.png" alt="Lago di Braies">
+            <div class="card__details">
+              <h3 class="card__title">Lago di Braies</h3>
+              <button class="card__like-button" alt="Like"></button>
+            </div>
+          </li>          
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__copyright">&#169; 2020 Around The U.S.</p>
+    </footer>
+  </div>
+  <div class="popup">
+    <form action="" class="popup__form">
+      <h3 class="popup__title">Edit Profile</h3>
+      <input type="text" class="popup__input popup__input_type_name" value="Jacques Cousteau">
+      <input type="text" class="popup__input popup__input_type_about" value="Explorer">
+      <button type="submit" class="popup__save-button">Save</button>
+    </form>
+    <button class="popup__close-button"></button>
+  </div>  
+  <script src="./script.js"></script>
+</body>

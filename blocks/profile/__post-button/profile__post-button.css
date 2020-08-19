@@ -1,0 +1,39 @@
+.profile__post-button {
+  grid-area: post;
+  height: 50px; 
+  width: 150px; 
+  border: 2px solid #FFF; 
+  border-radius: 2px; 
+  background-image: url('../../../images/addIcon.svg');
+  background-repeat: no-repeat; 
+  background-color: transparent; 
+  background-position: center;
+  align-self: center; 
+}
+
+.profile__post-button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+
+/* -----------------------------------
+ Media Queries to Adjust size and top
+ margin for the New Post Button.
+----------------------------------- */
+
+
+/* Medium Smartphone to Tablet Landscape */
+@media screen and (max-width: 960px) {
+  .profile__post-button {
+    margin-top: 36px;
+    width: 614px;
+  }
+}
+
+/* Extra-small mobile devices to Medium Smartphones */
+@media screen and (max-width: 720px) {
+  .profile__post-button {
+    width: 282px;
+  }
+}

@@ -1,0 +1,20 @@
+@import url('./__logo/header__logo.css');
+
+.header {
+  margin: 45px 0 0;
+  border-bottom: 1px solid #545454;
+}
+
+
+/* ----------------------------------
+ Media Query to adjust the top margin 
+ for devices with a smaller viewport
+---------------------------------- */
+
+
+/* Extra-small Mobile Dvices to Medium Smart Phones */
+@media screen and (max-width: 720px) {
+  .header {
+    margin-top: 28px;
+  }
+}

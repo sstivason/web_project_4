@@ -1,0 +1,29 @@
+.profile__about-me {
+  grid-area: about;
+  max-width: 318px; 
+  margin: 0; 
+  padding: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  text-overflow: clip; 
+  white-space: nowrap;
+  align-self: start;
+}
+
+
+/* -----------------------------------
+ Media Query to adjust the font size
+ and alignment of the About Me content
+----------------------------------- */
+
+
+/* Extra-small Mobile Dvices to Medium Smart Phones */
+@media screen and (max-width: 720px) {
+  .profile__about-me {
+    font-size: 14px;
+    line-height: 17px;
+    padding-left: 25px;
+    text-align: center;
+  }
+}
