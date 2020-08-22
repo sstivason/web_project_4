@@ -8,13 +8,11 @@ const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about-me');
 
 function togglePopup() {
-  popup.classList.toggle('popup_opened');
-  if (popup.classList.contains('popup_opened')) {
+  if (!popup.classList.contains('popup_opened')) {
     nameInput.value = profileName.textContent;
     aboutInput.value = profileAbout.textContent;
-  } else {
-    popup.classList.remove('popup_opened');
-  }
+  } 
+    popup.classList.toggle('popup_opened');
 }
 
 editProfileButton.addEventListener('click', togglePopup);
@@ -25,7 +23,7 @@ function submitHandler(e) {
     e.preventDefault();
     profileName.textContent = nameInput.value;
     profileAbout.textContent = aboutInput.value;
-    togglePopup()
+    togglePopup();
   }
 
 form.addEventListener('submit', submitHandler);

@@ -17,3 +17,9 @@
   border-radius: 2px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 661px) {
+  .popup__save-button {
+    width: calc(80% - 15px);
+  }
+}

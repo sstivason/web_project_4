@@ -29,7 +29,7 @@
 }
 
 /* Extra-small Mobile Devices to Tablet Landscape */
-@media only screen and (max-width: 661px){
+@media screen and (max-width: 661px){
   .profile {
     flex-direction: column; 
     justify-content: center; 
