@@ -6,6 +6,7 @@
   background-image: url('../../../images/likeIcon.svg');
   background-color: transparent;
   border: 0;
+  outline: none;
 }
 
 .card__like-button:hover {
