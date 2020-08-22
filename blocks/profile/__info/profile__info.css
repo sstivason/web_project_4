@@ -15,7 +15,7 @@
 
 
 /* Extra-small Mobile Dvices to Medium Smart Phones */
-@media only screen and (max-width: 720px) {
+@media only screen and (max-width: 661px) {
   .profile__info {
     margin: 0 auto; 
     justify-content: center; 

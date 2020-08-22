@@ -9,79 +9,80 @@
 <body class="root">
   <div class="page">
     <header class="header">
-      <img src="./images/logo.svg" class="header__logo">
+      <img src="./images/logo.svg" class="header__logo" alt="Around the U.S.">
     </header>
     <main class="content">
       <section class="profile">
         <div class="profile__container">
-          <img class="profile__avatar" src="./images/profileImg.svg" alt="Avatar">
+          <img class="profile__avatar" src="./images/profileImg.jpg" alt="Avatar">
           <div class="profile__info">
             <h1 class="profile__name">Jacques Cousteau</h1>  
             <p class="profile__about-me">Explorer</p>
-            <button class="profile__edit-button" alt="Edit Profile"></button>
+            <button class="profile__edit-button" type="button" aria-label="Edit Profile"></button>
           </div>
         </div>
-        <button class="profile__post-button" alt="Add to Gallery"></button>
+        <button class="profile__post-button" type="button" aria-label="Add to Gallery"></button>
       </section>
       <section class="gallery">
         <ul class="gallery__grid">
           <li class="card">
             <img class="card__image" src="./images/Yosemite.png" alt="Yosemite Valley">
             <div class="card__details">
-              <h3 class="card__title">Yosemite Valley</h3>
-              <button class="card__like-button" alt="Like"></button>
+              <h2 class="card__title">Yosemite Valley</h2>
+              <button class="card__like-button" type="button" aria-label="Like"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/Louise.png" alt="Lake Louise">
             <div class="card__details">
-              <h3 class="card__title">Lake Louise</h3>
-              <button class="card__like-button" alt="Like"></button>
+              <h2 class="card__title">Lake Louise</h2>
+              <button class="card__like-button" type="button" aria-label="Like"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/BaldMountains.png" alt="Bald Mountains">
             <div class="card__details">
-              <h3 class="card__title">Bald Mountains</h3>
-              <button class="card__like-button" alt="Like"></button>
+              <h2 class="card__title">Bald Mountains</h2>
+              <button class="card__like-button" type="button" aria-label="Like"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/Latemar.png" alt="Latemar">
             <div class="card__details">
-              <h3 class="card__title">Latemar</h3>
-              <button class="card__like-button" alt="Like"></button>
+              <h2 class="card__title">Latemar</h2>
+              <button class="card__like-button" type="button" aria-label="Like"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/Vanoise.png" alt="Vanoise National Park">
             <div class="card__details">
-              <h3 class="card__title">Vanoise National Park</h3>
-              <button class="card__like-button" alt="Like"></button>
+              <h2 class="card__title">Vanoise National Park</h2>
+              <button class="card__like-button" type="button" aria-label="Like"></button>
             </div>
           </li>
           <li class="card">
             <img class="card__image" src="./images/Lago.png" alt="Lago di Braies">
             <div class="card__details">
-              <h3 class="card__title">Lago di Braies</h3>
-              <button class="card__like-button" alt="Like"></button>
+              <h2 class="card__title">Lago di Braies</h2>
+              <button class="card__like-button" type="button" aria-label="Like"></button>
             </div>
           </li>          
         </ul>
       </section>
     </main>
     <footer class="footer">
-      <p class="footer__copyright">&#169; 2020 Around The U.S.</p>
+      <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
     </footer>
   </div>
   <div class="popup">
-    <form action="" class="popup__form">
+    <form action="#" class="popup__form" name="editProfile">
       <h3 class="popup__title">Edit Profile</h3>
-      <input type="text" class="popup__input popup__input_type_name" value="Jacques Cousteau">
-      <input type="text" class="popup__input popup__input_type_about" value="Explorer">
-      <button type="submit" class="popup__save-button">Save</button>
+      <input type="text" class="popup__input popup__input_type_name" name="profileName" placeholder="Name" value="Jacques Cousteau" required>
+      <input type="text" class="popup__input popup__input_type_about" name="profileAbout" placeholder="About" value="Explorer" required>
+      <button class="popup__save-button" type="submit">Save</button>
     </form>
-    <button class="popup__close-button"></button>
+    <button class="popup__close-button" type="button" Close Window"></button>
   </div>  
   <script src="./script.js"></script>
 </body>
+</html>

@@ -13,23 +13,32 @@
 
 .profile__edit-button:hover {
   opacity: 0.6;
+  transition: all ease 0.2s;
   cursor: pointer;
 }
 
 
-/* -----------------------------------
- Media Query adjust the dimensions and 
+/* ----------------------------------------
+ Media Querird to adjust the dimensions and 
  spacing for the profile edit button
------------------------------------ */
+---------------------------------------- */
 
+
+/* Medium Smartphone to Tablet Landscape */
+@media screen and (max-width: 960px) {
+  .profile__edit-button {
+    margin-left: 16px;
+  }
+}
 
 /* Extra-small Mobile Dvices to Medium Smart Phones */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 661px) {
   .profile__edit-button {
-    height: 7.5px; 
-    width: 7.5px; 
+    height: 18px; 
+    width: 18px; 
     margin-top: 0;
     margin-left: 12px;
     padding: 5.25px; 
+    align-self: center;
   }
 }

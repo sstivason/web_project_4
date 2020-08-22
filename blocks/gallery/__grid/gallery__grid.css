@@ -3,30 +3,22 @@
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
   grid-gap: 21px 18px;
 }
 
 
-/* -----------------------------------
- Media Queries to Adjust the Number of 
- Columns used to Display Card Elements
------------------------------------ */
+/* -------------------------------------
+ Media Queries to Adjust the Grid-Gap on 
+ Medium-Sized Smartphones and Smaller
+------------------------------------- */
 
-
-/* Medium Smartphone to Tablet Landscape */
-@media screen and (max-width: 960px) {
-  .gallery__grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 44px;
-    justify-content: space-evenly;
-  }
-}
 
 /* Extra-small Mobile Device to Medium Smartphones */
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 661) {
   .gallery__grid {
-    grid-template-columns: 1fr;
-    grid-row-gap: 20px;
+    grid-gap: 22px 4px;
+    padding: 0;
   }
 }

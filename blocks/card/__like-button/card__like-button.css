@@ -7,3 +7,9 @@
   background-color: transparent;
   border: 0;
 }
+
+.card__like-button:hover {
+  opacity: .6;
+  transition: all ease 0.2s;
+  cursor: pointer;
+}

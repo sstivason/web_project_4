@@ -8,18 +8,24 @@ const profileName = document.querySelector('.profile__name');
 const profileAbout = document.querySelector('.profile__about-me');
 
 function togglePopup() {
-  nameInput.value = profileName.textContent;
-  aboutInput.value = profileAbout.textContent;
   popup.classList.toggle('popup_opened');
+  if (popup.classList.contains('popup_opened')) {
+    nameInput.value = profileName.textContent;
+    aboutInput.value = profileAbout.textContent;
+  } else {
+    popup.classList.remove('popup_opened');
+  }
 }
 
 editProfileButton.addEventListener('click', togglePopup);
 
 closePopupButton.addEventListener('click', togglePopup);
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileAbout.textContent = aboutInput.value;
-  togglePopup()
-})
+function submitHandler(e) {
+    e.preventDefault();
+    profileName.textContent = nameInput.value;
+    profileAbout.textContent = aboutInput.value;
+    togglePopup()
+  }
+
+form.addEventListener('submit', submitHandler);

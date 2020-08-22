@@ -3,16 +3,23 @@
 @import url('./__input/popup__input.css');
 @import url('./__save-button/popup__save-button.css');
 @import url('./__close-button/popup__close-button.css');
-@import url('./__input/_type/popup__input_type_name.css');
-@import url('./__input/_type/popup__input_type_about.css');
 
 .popup {
   width: 100%;
-  height: 100%;
+  max-height: 100%;
   position: fixed;
+  display: flex;
+  visibility: hidden;
   top: 0px;
   left: 0px;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, .5);
   justify-content: center;
-  display: none;
+}
+
+.popup__input_type_name {
+
+}
+
+.popup__input_type_about {
+
 }

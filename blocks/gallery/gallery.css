@@ -6,15 +6,23 @@
 }
 
 
-/* -----------------------------------------
- Media Query to incorporate responsive left-
- right margins on medium-sized devices
------------------------------------------ */
+/* ------------------------------------
+ Media Query to incorporate left-right
+ padding for mobile devices.
+------------------------------------ */
 
 
 /* Medium Smartphone to Tablet Landscape */
-@media screen and (min-width: 720px) and (max-width: 960px) {
+@media screen and (max-width: 960px) {
   .gallery {
-    margin: 47.25px 20% 0;
+    padding: 0 2%;
+  }
+}
+
+/* Extra-small Mobile to Medium Smartphone */
+@media screen and (max-width: 661px) {
+  .gallery {
+    margin: 36px auto;
+    padding: 0 6%;
   }
 }
