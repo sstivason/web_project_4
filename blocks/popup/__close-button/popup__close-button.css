@@ -1,8 +1,9 @@
 .popup__close-button {
   height: 40.7px;
   width: 40.7px;
-  position: relative;
-  top: -195px;
+  position: absolute;
+  top: -40.7px;
+  right: -40.7px;
   background: transparent;
   background-repeat: no-repeat;
   background-position: center;
@@ -17,10 +18,9 @@
   opacity: 0.6;
   cursor: pointer;
 }
-
+/*
 @media screen and (max-width: 661px) {
   .popup__close-button {
-    width: 80%;
-    height: 80%;
+
   }
-}
+}*/
