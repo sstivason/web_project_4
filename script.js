@@ -13,7 +13,6 @@ const closeCardButton = addCardPopup.querySelector('.popup__close-button');
 const closeImageButton = openImagePopup.querySelector('.popup__close-button');
 
 //Forms
-//const form = document.querySelector('.popup__form');
 const addForm = addCardPopup.querySelector('.popup__add-form');
 const editForm = editProfilePopup.querySelector('.popup__edit-form');
 
