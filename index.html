@@ -25,48 +25,7 @@
       </section>
       <section class="gallery">
         <ul class="gallery__grid">
-          <li class="card">
-            <img class="card__image" src="./images/Yosemite.png" alt="Yosemite Valley">
-            <div class="card__details">
-              <h2 class="card__title">Yosemite Valley</h2>
-              <button class="card__like-button" type="button" aria-label="Like"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/Louise.png" alt="Lake Louise">
-            <div class="card__details">
-              <h2 class="card__title">Lake Louise</h2>
-              <button class="card__like-button" type="button" aria-label="Like"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/BaldMountains.png" alt="Bald Mountains">
-            <div class="card__details">
-              <h2 class="card__title">Bald Mountains</h2>
-              <button class="card__like-button" type="button" aria-label="Like"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/Latemar.png" alt="Latemar">
-            <div class="card__details">
-              <h2 class="card__title">Latemar</h2>
-              <button class="card__like-button" type="button" aria-label="Like"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/Vanoise.png" alt="Vanoise National Park">
-            <div class="card__details">
-              <h2 class="card__title">Vanoise National Park</h2>
-              <button class="card__like-button" type="button" aria-label="Like"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img class="card__image" src="./images/Lago.png" alt="Lago di Braies">
-            <div class="card__details">
-              <h2 class="card__title">Lago di Braies</h2>
-              <button class="card__like-button" type="button" aria-label="Like"></button>
-            </div>
-          </li>          
+          <!--card template-->
         </ul>
       </section>
     </main>
@@ -74,8 +33,8 @@
       <p class="footer__copyright">&copy; 2020 Around The U.S.</p>
     </footer>
   </div>
-  <div class="popup">
-    <form action="#" class="popup__form" name="editProfile">
+  <div class="popup popup_type_edit-profile">
+    <form action="#" class="popup__form popup__edit-form" name="editProfile">
       <button class="popup__close-button" type="button" aria-label="Close Window"></button>
       <h3 class="popup__title">Edit Profile</h3>
       <input type="text" class="popup__input popup__input_type_name" name="profileName" placeholder="Name" value="Jacques Cousteau" required>
@@ -83,6 +42,36 @@
       <button class="popup__save-button" type="submit">Save</button>
     </form>
   </div>  
+  <div class="popup popup_type_add-card">
+    <form action="#" class="popup__form popup__add-form" name="newPlace">
+      <button class="popup__close-button" type="button" aria-label="Close Window"></button>
+      <h3 class="popup__title">New Place</h3>
+      <input type="text" class="popup__input popup__input_type_card-title" name="placeTitle" placeholder="Title" value=""" required>
+      <input type="url" class="popup__input popup__input_type_url" name="imageLink" placeholder="Image Link" value=""" required>
+      <button class="popup__save-button" type="submit">Save</button>
+    </form>
+  </div> 
+  
+  <div class="popup popup_type_image">
+    <div class="popup__container">
+      <button class="popup__close-button" type="button" aria-label="Close Window"></button>
+      <figure class="popup__figure">
+        <img class="popup__image" src="" alt="">
+        <figcaption class="popup__image-title"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <template class="card-template">
+    <li class="card">
+      <button class="card__delete-button" type="button" aria-label="Delete"></button>
+      <img class="card__image">
+      <div class="card__details">
+        <h2 class="card__title"></h2>
+        <button class="card__like-button" type="button" aria-label="Like"></button>
+      </div>
+    </li>      
+  </template>
   <script src="./script.js"></script>
 </body>
 </html>

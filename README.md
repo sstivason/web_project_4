@@ -9,7 +9,8 @@ A responsive, travel-themed web design that enables the user to manage their pro
 
 ## Figma
 The design of this project was made according to the Figma layout:
-[Download Layout](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+ * [Project 4 (Phase 1)](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+ * [Project 5 (Phase 2)](https://www.figma.com/file/avLHzpJw2dmU2NaDATZ6CX/Sprint-5%3A-Around-The-U.S.-%2F-desktop-%2B-mobile?node-id=0%3A1)
 
 ## Technologies
 This project was created using:
@@ -18,7 +19,11 @@ This project was created using:
  * JS
 
  ## Project Status
- Responsive design completed to closely match the mock-up for desktop and extra-small mobile devices, with a slight enhancemnt to better support mid-sized mobile devices.  The next porject phases will enhance functionality to enable profile modifications to be saved to the server.
+ Phase 1 - Complete:
+ Responsive design completed to closely match the mock-up for desktop and extra-small mobile devices, with a slight enhancement to better support mid-sized mobile devices.  Javascript functionality included to edit profile information via a modal(popup) form editor. 
+
+Phase 2 - Complete:
+Javascript functionality expanded to enable the addition of new image cards, display images within a modal(popup) upon card selection, card like/heart functionality, and to remove/delete cards.
 
  ## Demo Site
  [Github Publication](https://sstivason.github.io/web_project_4/)
