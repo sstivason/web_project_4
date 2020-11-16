@@ -61,6 +61,7 @@ addForm.addEventListener('submit', (event) => {
   event.preventDefault();
   addCard({name: titleInput.value, link: imageInput.value});
   togglePopup(addCardPopup);
+  addForm.reset();
   });
 
 //Close New Card Button
