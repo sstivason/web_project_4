@@ -24,6 +24,10 @@ const profileAbout = document.querySelector('.profile__about-me');
 const nameInput = editForm.querySelector('.popup__input_type_name');
 const aboutInput = editForm.querySelector('.popup__input_type_about');
 
+//Card Fields
+const popupImage = openImagePopup.querySelector('.popup__image');
+const popupImageTitle = openImagePopup.querySelector('.popup__image-title');
+
 //Card Inputs
 const titleInput = addForm.querySelector('.popup__input_type_card-title');
 const imageInput = addForm.querySelector('.popup__input_type_url');
@@ -62,41 +66,12 @@ addForm.addEventListener('submit', (event) => {
   addCard({name: titleInput.value, link: imageInput.value});
   togglePopup(addCardPopup);
   addForm.reset();
-  });
+});
 
 //Close New Card Button
 closeCardButton.addEventListener('click', e => {
   togglePopup(addCardPopup);
 });
-
-
-//Initial Card Array
-const initialCards = [
-  {
-    name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
-  },
-  {
-    name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg"
-  },
-  {
-    name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg"
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg"
-  },
-  {
-    name: "Vanoise National Park",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg"
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg"
-  }
-]; 
 
 //Display Cards
 const cardTemplate = document.querySelector('.card-template').content.querySelector('.card');
@@ -111,9 +86,11 @@ function createCard(card) {
   const cardDeleteButton = cardElement.querySelector('.card__delete-button');
 
   //Card Like Button
-  cardLikeButton.addEventListener('click', (event) => {
+  function toggleCardLike (event) {
     event.target.classList.toggle('card__like-button_selected');
-  });
+  }
+  cardLikeButton.addEventListener('click', toggleCardLike);
+
 
   //Card Delete Button
   cardDeleteButton.addEventListener('click', (event) => {
@@ -127,21 +104,19 @@ function createCard(card) {
 
   //Open Card Image
   cardImage.addEventListener('click', () => {
-    const popupImage = openImagePopup.querySelector('.popup__image');
-    const popupImageTitle = openImagePopup.querySelector('.popup__image-title');
     togglePopup(openImagePopup);
     popupImage.src = card.link;
     popupImageTitle.textContent = card.name;
   });
  
   return cardElement;
-};
+}
 
 //Add Card Function
 function addCard (card) {
   const cardElement = createCard(card);
   list.prepend(cardElement);
-};
+}
 
 //Display Initial Cards
 initialCards.forEach(card => {
