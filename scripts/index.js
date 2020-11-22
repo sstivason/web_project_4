@@ -32,9 +32,29 @@ const popupImageTitle = openImagePopup.querySelector('.popup__image-title');
 const titleInput = addForm.querySelector('.popup__input_type_card-title');
 const imageInput = addForm.querySelector('.popup__input_type_url');
 
-//Toggle Function
+//Modal Toggle Function
 function togglePopup(modal) {
+  if (!modal.classList.contains('popup_opened')) {
+    modal.addEventListener('click', overlayClose);
+    document.addEventListener('keydown', escKeyClose);
+  } else {
+    modal.removeEventListener('click', overlayClose);
+    document.removeEventListener('keydown', escKeyClose);
+  }
   modal.classList.toggle('popup_opened');
+}
+
+//Close Modal with Escape
+function escKeyClose(evt) {
+  if (evt.key === "Escape") {
+    const activeModal = document.querySelector('.popup_opened');
+    togglePopup(activeModal);
+  }
+}
+
+//Close Modal from Overlay
+function overlayClose(evt) {
+  togglePopup(evt.target);
 }
 
 //Edit Profile Button
@@ -42,7 +62,7 @@ editProfileButton.addEventListener('click', () => {
   togglePopup(editProfilePopup);
 });
 
-//Save Profile
+//Submit Profile Button
 editForm.addEventListener('submit', (event) => {
   event.preventDefault();
   profileName.textContent = nameInput.value;
@@ -50,7 +70,7 @@ editForm.addEventListener('submit', (event) => {
   togglePopup(editProfilePopup);
 });
 
-//Close Profile Button
+//Close Profile Modal
 closeProfileButton.addEventListener('click', () => {
   togglePopup(editProfilePopup);
 });
@@ -60,7 +80,7 @@ addCardButton.addEventListener('click', () => {
     togglePopup(addCardPopup);
 });
 
-//Save New Card
+//Submit New Card Button
 addForm.addEventListener('submit', (event) => {
   event.preventDefault();
   addCard({name: titleInput.value, link: imageInput.value});
@@ -68,7 +88,7 @@ addForm.addEventListener('submit', (event) => {
   addForm.reset();
 });
 
-//Close New Card Button
+//Close New Card Modal
 closeCardButton.addEventListener('click', e => {
   togglePopup(addCardPopup);
 });
@@ -122,6 +142,7 @@ function addCard (card) {
 initialCards.forEach(card => {
   addCard(card);
 });
+
 
 //Close Card Image
 closeImageButton.addEventListener('click', e => {

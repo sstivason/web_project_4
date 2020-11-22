@@ -6,6 +6,9 @@
 @import url('./__container/popup__container.css');
 @import url('./__figure/popup__figure.css');
 @import url('./__image/popup__image.css');
+@import url('./__input/_type_error/popup__input_type_error.css');
+@import url('./__error/popup__error.css');
+@import url('./__save-button/_disabled/popup__save-button_disabled.css');
 
 .popup {
   width: 100%;
