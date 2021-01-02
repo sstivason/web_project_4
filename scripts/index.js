@@ -63,8 +63,7 @@ function fillDefaultEditProfileValues() {
 
 function fillDefaultCardModalValues() {
   if(!addCardModalWindow.classList.contains("popup_opened")) {
-    inputTitle.value = "";
-    inputLink.value = "";
+    newPlace.reset();
     }    
 }
 

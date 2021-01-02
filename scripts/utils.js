@@ -11,7 +11,10 @@ export function togglePopup(modal) {
 }
 
 export function closeModalOutside(event) { 
-  togglePopup(event.target);
+  if(event.target.classList.contains('popup')) {
+    const openModal = document.querySelector('.popup_opened'); 
+    togglePopup(openModal); 
+  }
 } 
  
 export function escCloseModal(event) { 
@@ -20,10 +23,6 @@ export function escCloseModal(event) {
     togglePopup(openModal); 
   } 
 }
-
-/* NOTE TO REVIEWER: The ESC works great until I save one of the forms, 
-then ESC stops working for the Image modals only.  Could you nudge me in 
-the right direction to address this? */
 
 export function saveButtonDisabled(modal) {
   const inactiveButton = modal.querySelector('.popup__save-button');

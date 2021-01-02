@@ -60,6 +60,4 @@ class FormValidator {
   }
 }
 
-const formValidator = new FormValidator();
-
 export default FormValidator;
