@@ -17,7 +17,7 @@ The design of this project was made according to the Figma layout:
 This project was created using:
  * HTML5
  * CSS3 (Flexbox, Grid, BEM)
- * ES6 (Modals popup windows, Like and Delete functionality, Form validation)
+ * ES6 (Modal popup windows, Like and Delete functionality, Form validation)
 
  ## Project Status
  Phase 1 - Complete:
