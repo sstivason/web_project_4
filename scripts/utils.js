@@ -2,8 +2,7 @@ export function togglePopup(modal) {
   if(!modal.classList.contains('popup_opened')) { 
     modal.addEventListener('click', closeModalOutside); 
     window.addEventListener('keydown', escCloseModal); 
-  } 
-  else { 
+  } else { 
     modal.removeEventListener('click', closeModalOutside); 
     window.removeEventListener('keydown', escCloseModal); 
   }  
