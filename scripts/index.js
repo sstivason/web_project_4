@@ -1,150 +1,126 @@
-//Modals
-const addCardPopup = document.querySelector('.popup_type_add-card');
-const editProfilePopup = document.querySelector('.popup_type_edit-profile');
-const openImagePopup = document.querySelector('.popup_type_image');
+import FormValidator from './FormValidator.js';
+import Card from './Card.js';
+import initialCards from './initialCards.js';
+import {togglePopup, saveButtonDisabled} from './utils.js';
 
-//Open Buttons
-const editProfileButton = document.querySelector('.profile__edit-button');
-const addCardButton = document.querySelector('.profile__post-button');
+const defaultConfig = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: '.popup__error_visible'
+};
 
-//Close Buttons
-const closeProfileButton = editProfilePopup.querySelector('.popup__close-button');
-const closeCardButton = addCardPopup.querySelector('.popup__close-button');
-const closeImageButton = openImagePopup.querySelector('.popup__close-button');
+//Modal Containers
 
-//Forms
-const addForm = addCardPopup.querySelector('.popup__add-form');
-const editForm = editProfilePopup.querySelector('.popup__edit-form');
+const addCardModalWindow = document.querySelector('.popup_type_add-card');
+const editProfileModalWindow = document.querySelector('.popup_type_edit-profile');
+const imageModalWindow = document.querySelector('.popup_type_image');
 
-//Profile Fields
+
+//Input Fields
+
+const inputName = document.querySelector('.popup__input_type_name');
+const inputAboutme = document.querySelector('.popup__input_type_about');
 const profileName = document.querySelector('.profile__name');
-const profileAbout = document.querySelector('.profile__about-me');
+const profileAboutme = document.querySelector('.profile__about-me');
+const inputTitle = document.querySelector('.popup__input_type_card-title');
+const inputLink = document.querySelector('.popup__input_type_url'); 
 
-//Profile Inputs
-const nameInput = editForm.querySelector('.popup__input_type_name');
-const aboutInput = editForm.querySelector('.popup__input_type_about');
 
-//Card Fields
-const popupImage = openImagePopup.querySelector('.popup__image');
-const popupImageTitle = openImagePopup.querySelector('.popup__image-title');
+//Buttons
 
-//Card Inputs
-const titleInput = addForm.querySelector('.popup__input_type_card-title');
-const imageInput = addForm.querySelector('.popup__input_type_url');
+const editButton = document.querySelector('.profile__edit-button');
+const closeProfileButton = editProfileModalWindow.querySelector('.popup__close-button');
+const addButton = document.querySelector('.profile__post-button');
+const closeCardButton = addCardModalWindow.querySelector('.popup__close-button');
+const closeImageButton = imageModalWindow.querySelector('.popup__close-button');
 
-//Modal Toggle Function
-function togglePopup(modal) {
-  if (!modal.classList.contains('popup_opened')) {
-    modal.addEventListener('click', overlayClose);
-    document.addEventListener('keydown', escKeyClose);
-  } else {
-    modal.removeEventListener('click', overlayClose);
-    document.removeEventListener('keydown', escKeyClose);
-  }
-  modal.classList.toggle('popup_opened');
-}
 
-//Close Modal with Escape
-function escKeyClose(evt) {
-  if (evt.key === "Escape") {
-    const activeModal = document.querySelector('.popup_opened');
-    togglePopup(activeModal);
-  }
-}
+//Card List
 
-//Close Modal from Overlay
-function overlayClose(evt) {
-  togglePopup(evt.target);
-}
-
-//Edit Profile Button
-editProfileButton.addEventListener('click', () => {
-  togglePopup(editProfilePopup);
-});
-
-//Submit Profile Button
-editForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileAbout.textContent = aboutInput.value;
-  togglePopup(editProfilePopup);
-});
-
-//Close Profile Modal
-closeProfileButton.addEventListener('click', () => {
-  togglePopup(editProfilePopup);
-});
-
-//Add New Card Button
-addCardButton.addEventListener('click', () => {
-    togglePopup(addCardPopup);
-});
-
-//Submit New Card Button
-addForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  addCard({name: titleInput.value, link: imageInput.value});
-  togglePopup(addCardPopup);
-  addForm.reset();
-});
-
-//Close New Card Modal
-closeCardButton.addEventListener('click', e => {
-  togglePopup(addCardPopup);
-});
-
-//Display Cards
-const cardTemplate = document.querySelector('.card-template').content.querySelector('.card');
 const list = document.querySelector('.gallery__grid');
 
-//Populate Card Function
-function createCard(card) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImage = cardElement.querySelector('.card__image');
-  const cardTitle = cardElement.querySelector('.card__title');
-  const cardLikeButton = cardElement.querySelector('.card__like-button');
-  const cardDeleteButton = cardElement.querySelector('.card__delete-button');
 
-  //Card Like Button
-  function toggleCardLike (event) {
-    event.target.classList.toggle('card__like-button_selected');
-  }
-  cardLikeButton.addEventListener('click', toggleCardLike);
+//Input Validation
+
+const editFormValidator = new FormValidator(defaultConfig, editProfileModalWindow);
+const addCardFormValidator = new FormValidator(defaultConfig, addCardModalWindow);
+
+editFormValidator.enableValidation();
+addCardFormValidator.enableValidation();
 
 
-  //Card Delete Button
-  cardDeleteButton.addEventListener('click', (event) => {
-    event.target.closest('.card').remove();
-  });
+//Function Definitions
 
-  //Set Card Attributes
-  cardTitle.textContent = card.name;
-  cardImage.setAttribute('src', card.link);
-  cardImage.setAttribute('alt', card.name);
-
-  //Open Card Image
-  cardImage.addEventListener('click', () => {
-    togglePopup(openImagePopup);
-    popupImage.src = card.link;
-    popupImageTitle.textContent = card.name;
-  });
- 
-  return cardElement;
+function fillDefaultEditProfileValues() {
+  if (!editProfileModalWindow.classList.contains("popup_opened")) {
+    inputName.value = profileName.textContent;
+    inputAboutme.value = profileAboutme.textContent;
+  }  
 }
 
-//Add Card Function
-function addCard (card) {
-  const cardElement = createCard(card);
-  list.prepend(cardElement);
+function fillDefaultCardModalValues() {
+  if(!addCardModalWindow.classList.contains("popup_opened")) {
+    inputTitle.value = "";
+    inputLink.value = "";
+    }    
 }
 
-//Display Initial Cards
-initialCards.forEach(card => {
-  addCard(card);
+function fillProfileValues(event) {
+  event.preventDefault();       
+  profileName.textContent = inputName.value;
+  profileAboutme.textContent = inputAboutme.value;        
+  togglePopup(editProfileModalWindow);
+}
+
+function fillCardValues(event) {
+  event.preventDefault();
+  const tempObject = {};
+  tempObject.name = inputTitle.value;
+  tempObject.link = inputLink.value;
+
+  list.prepend(new Card(tempObject, '.card-template').renderNewCard());
+  togglePopup(addCardModalWindow);
+}
+
+initialCards.forEach((data) => list.prepend(new Card(data, '.card-template').renderNewCard()));
+
+
+//Edit Profile Modal Events
+
+editButton.addEventListener('click', ()=> {  
+  fillDefaultEditProfileValues();
+  togglePopup(editProfileModalWindow);
 });
 
+closeProfileButton.addEventListener('click', ()=> {
+  fillDefaultEditProfileValues();
+  togglePopup(editProfileModalWindow);
+});
 
-//Close Card Image
-closeImageButton.addEventListener('click', e => {
-  togglePopup(openImagePopup);
+editProfileModalWindow.addEventListener('submit', fillProfileValues);
+
+
+//Add Card Modal Events
+
+addButton.addEventListener('click', () => {
+  fillDefaultCardModalValues();
+  saveButtonDisabled(addCardModalWindow);
+  togglePopup(addCardModalWindow);
+});
+
+closeCardButton.addEventListener('click', ()=> {
+  fillDefaultCardModalValues();
+  togglePopup(addCardModalWindow);
+});
+
+addCardModalWindow.addEventListener('submit', fillCardValues);
+
+
+//Image Modal Event
+
+closeImageButton.addEventListener('click', ()=> {
+  togglePopup(imageModalWindow);
 });
